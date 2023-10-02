@@ -1,0 +1,56 @@
+.pagination {
+	--purple: rgb(167 63 255);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 0;
+	color: var(--color-white);
+	fill: var(--color-white);
+
+	& button {
+		border: none;
+		outline: none;
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.5em 1em;
+		border-radius: 0.4rem;
+		cursor: pointer;
+		transition: transform, background-color, 300ms ease-in-out;
+		background-color: var(--blue-500);
+
+		&:hover {
+			background-color: var(--blue-600);
+		}
+		&:active {
+			transform: scale(0.9);
+		}
+
+		&:disabled {
+			opacity: 0.6;
+			cursor: no-drop;
+			transform: scale(1);
+		}
+
+		& svg {
+			display: block;
+			height: 24px;
+			width: 24px;
+		}
+	}
+
+	&__position,
+	&__total {
+		display: inline-block;
+		color: var(--dark-500);
+
+		&::selection {
+			user-select: none;
+		}
+	}
+	&__position {
+		padding-right: 0.5rem;
+	}
+}

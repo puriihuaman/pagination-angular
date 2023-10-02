@@ -1,0 +1,35 @@
+.accordion-item {
+	background-color: var(--dark-secondary);
+	padding: 1.25rem;
+	border-radius: 0.4rem;
+	border: var(--border);
+}
+
+.accordion-title {
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: #e1e1e1;
+
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	user-select: none;
+
+	span {
+		color: #8b8b8b;
+	}
+}
+
+.accordion-content {
+	color: #8b8b8b;
+	height: 0;
+	overflow: hidden;
+	transition: all ease-out 0.3s;
+
+	&.active {
+		height: auto;
+		margin-top: 1rem;
+		text-align: center;
+	}
+}

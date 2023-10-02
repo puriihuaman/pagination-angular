@@ -1,0 +1,18 @@
+<li class="accordion-item">
+	<header (click)="handleToggle(item.id)">
+		<h2 class="accordion-title">
+			{{ item.title }}
+			<span>{{ item.id === active ? "-" : "+" }}</span>
+		</h2>
+	</header>
+
+	<div
+		class="{{ 'accordion-content' }}"
+		[ngClass]="active === item.id ? 'active' : ''"
+		[ngStyle]="{
+			height: active === item.id ? 'fit-content' : ' 0px'
+		}"
+	>
+		<p>{{ item.description }}</p>
+	</div>
+</li>
