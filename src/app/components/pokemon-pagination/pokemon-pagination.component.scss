@@ -1,14 +1,20 @@
 .pagination {
+	--purple: rgb(167 63 255);
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
 	flex-wrap: wrap;
+	flex-direction: column;
 
 	padding: 1rem 0;
-
 	color: var(--color-white);
 	fill: var(--color-white);
+
+	@media screen and (min-width: 448px) {
+		flex-direction: row;
+	}
 
 	& button {
 		border: none;
@@ -37,12 +43,37 @@
 
 		& svg {
 			display: block;
-			height: 24px;
-			width: 24px;
+			height: 18px;
+			width: 18px;
 		}
 	}
 
-	& .text {
+	&__position,
+	&__total {
+		display: inline-block;
 		color: var(--dark-500);
+		text-wrap: nowrap;
+
+		&::selection {
+			user-select: none;
+		}
+	}
+	&__position {
+		padding-right: 0.5rem;
+	}
+
+	&__details {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		& input {
+			border: 1px solid var(--blue-500);
+			outline: none;
+			padding: 0.35rem;
+			border-radius: var(--radius);
+			line-height: inherit;
+			background: var(--dark-100);
+		}
 	}
 }

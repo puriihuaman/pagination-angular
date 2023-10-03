@@ -4,13 +4,19 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { PaginationComponent } from './components/pagination/pagination.component';
-import { AccordionComponent } from './components/accordion/accordion.component';
-import { AccordionItemComponent } from './components/accordion-item/accordion-item.component';
+import { PaginationComponent } from "./components/pagination/pagination.component";
+import { FormsModule } from "@angular/forms";
+import { PokemonPaginationComponent } from "./components/pokemon-pagination/pokemon-pagination.component";
+import { PokemonComponent } from "./components/pokemon/pokemon.component";
 
 @NgModule({
-	declarations: [AppComponent, PaginationComponent, AccordionComponent, AccordionItemComponent],
-	imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+	declarations: [
+		AppComponent,
+		PaginationComponent,
+		PokemonPaginationComponent,
+		PokemonComponent,
+	],
+	imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 	providers: [],
 	bootstrap: [AppComponent],
 })

@@ -1,0 +1,16 @@
+<article class="pokemon" [attr.data-poke]="pokemon?.name">
+	<header class="pokemon__header">
+		<img
+			class="pokemon__image"
+			[src]="
+				pokemon?.sprites?.back_default ||
+				pokemon?.sprites?.front_default ||
+				pokemon?.sprites?.front_female
+			"
+			[alt]="pokemon?.name"
+			loading="lazy"
+		/>
+	</header>
+
+	<p class="pokemon__title">{{ pokemon?.name }}</p>
+</article>

@@ -1,7 +1,7 @@
 <div class="pagination">
 	<button
 		id="btnPrevious"
-		[disabled]="previousLink === null || previousLink > nextLink"
+		[disabled]="pokemonPage === 0 || pokemonPage < 1"
 		(click)="handlePreviousPage()"
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -11,9 +11,24 @@
 		</svg>
 	</button>
 
+	<div class="pagination__details">
+		<input
+			class="pagination__position"
+			type="number"
+			[(ngModel)]="pokemonPage"
+			[value]="pokemonPage"
+			min="1"
+			[max]="pokemonTotales"
+			(keyup.enter)="handleOnKeyUp(pokemonPage)"
+		/>
+		<small class="pagination__total">de {{ pokemonTotales }} pokes</small>
+	</div>
+
 	<button
 		id="btnNext"
-		[disabled]="nextLink === null"
+		[disabled]="
+			pokemonPage === pokemonTotales + 1 || pokemonPage > pokemonTotales
+		"
 		(click)="handleNextPage()"
 	>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -22,6 +37,4 @@
 			></path>
 		</svg>
 	</button>
-
-	<small class="text">Páginas</small>
 </div>

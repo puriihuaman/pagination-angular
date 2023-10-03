@@ -15,6 +15,11 @@ img {
 	color: var(--dark-900);
 }
 
+.title {
+	text-align: center;
+	text-wrap: balance;
+}
+
 .pagination {
 	margin-left: auto;
 	margin-right: auto;
@@ -23,41 +28,11 @@ img {
 
 .container {
 	display: flex;
-
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: 1rem;
 
-	border: var(--border);
 	margin: auto;
 	overflow: hidden;
 	padding: 1rem;
-}
-
-.pokemon {
-	min-width: 200px;
-	width: 100%;
-	background-color: var(--dark-100);
-	// box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.2), 0 1px 2px -1px rgb(0 0 0 / 0.2);
-	box-shadow: var(--shadow);
-	border-radius: 0.4rem;
-	text-align: center;
-	padding: 1rem;
-	color: var(--blue-500);
-
-	&__header {
-		border-bottom: var(--border);
-	}
-
-	&__image {
-		margin-left: auto;
-		margin-right: auto;
-		aspect-ratio: 1 / 1;
-
-		&::selection {
-			user-select: none;
-		}
-	}
-
-	&__title {
-		margin-top: 1rem;
-	}
 }

@@ -6,23 +6,20 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 	styleUrls: ["./pagination.component.scss"],
 })
 export class PaginationComponent {
-	@Input() pagina: number = 0;
-	@Input() total: number = 0;
+	@Input() nextLink: string = "";
+	@Input() previousLink: string = "";
 
-	@Output() nextChangePage = new EventEmitter<number>();
-	@Output() previousChangePage = new EventEmitter<number>();
+	@Output() nextChangePage: EventEmitter<string> = new EventEmitter<string>();
+	@Output() previousChangePage: EventEmitter<string> =
+		new EventEmitter<string>();
 
-	current: number = 1;
+	ngOnInit(): void {}
 
-	nextPage() {
-		this.current += 1;
-		this.pagina += 1;
-		this.nextChangePage.emit(this.pagina);
+	handleNextPage(): void {
+		this.nextChangePage.emit(this.nextLink);
 	}
 
-	previousPage() {
-		this.current -= 1;
-		this.pagina -= 1;
-		this.previousChangePage.emit(this.pagina);
+	handlePreviousPage(): void {
+		this.previousChangePage.emit(this.previousLink);
 	}
 }

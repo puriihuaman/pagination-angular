@@ -1,29 +1,26 @@
 <div class="layout">
+	<h1 class="title">{{ title }} - Pokemons</h1>
+
 	<div class="pagination">
 		<div class="container">
 			<ng-container *ngFor="let pokemon of pokemonsToShow">
-				<article class="pokemon" [attr.data-poke]="pokemon.name">
-					<header class="pokemon__header">
-						<img
-							class="pokemon__image"
-							[src]="pokemon.image"
-							[alt]="pokemon.name"
-						/>
-					</header>
-
-					<p class="pokemon__title">{{ pokemon.name }}</p>
-				</article>
+				<app-pokemon [pokemon]="pokemon"></app-pokemon>
 			</ng-container>
 		</div>
 
+		<app-pokemon-pagination
+			[pokemonPage]="pokemonPage"
+			[pokemonTotales]="pokemonTotales"
+			(currentPagination)="paginatePokemons($event)"
+			(nextChangePage)="paginatePokemons($event)"
+			(previousChangePage)="paginatePokemons($event)"
+		></app-pokemon-pagination>
+
 		<app-pagination
-			[pagina]="pagina"
-			[total]="total"
+			[nextLink]="nextLink"
+			[previousLink]="previousLink"
 			(nextChangePage)="paginatePages($event)"
 			(previousChangePage)="paginatePages($event)"
 		></app-pagination>
 	</div>
-	<br />
-
-	<!-- <app-accordion></app-accordion> -->
 </div>
