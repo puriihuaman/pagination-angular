@@ -2,13 +2,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
+	gap: var(--space-4);
 	flex-wrap: wrap;
-
-	padding: 1rem 0;
-
-	color: var(--color-white);
-	fill: var(--color-white);
+	padding: var(--space-4) 0;
+	color: var(--colors-gray-50);
 
 	& button {
 		border: none;
@@ -16,14 +13,16 @@
 		display: inline-flex;
 		justify-content: center;
 		align-items: center;
-		padding: 0.5em 1em;
-		border-radius: var(--radius);
+		padding: var(--space-1) var(--space-2);
+		color: currentColor;
+		border-radius: var(--radii-md);
 		cursor: pointer;
-		transition: transform, background-color, 300ms ease-in-out;
-		background-color: var(--blue-500);
+		background-color: var(--colors-blue-500);
+		transition: var(--transition-property-common),
+			var(--transition-duration-300) var(--transition-easing-ease-in-out);
 
 		&:hover {
-			background-color: var(--blue-600);
+			background-color: var(--colors-blue-600);
 		}
 		&:active {
 			transform: scale(0.9);
@@ -34,15 +33,9 @@
 			cursor: no-drop;
 			transform: scale(1);
 		}
-
-		& svg {
-			display: block;
-			height: 24px;
-			width: 24px;
-		}
 	}
 
 	& .text {
-		color: var(--dark-500);
+		color: var(--colors-gray-600);
 	}
 }

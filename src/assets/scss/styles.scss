@@ -1,3 +1,5 @@
 @import "./config/vars.scss";
 @import "./config/color.scss";
-@import "./config/base.scss";
+
+@import "./base/reset.scss";
+@import "./base/base.scss";
